@@ -12490,8 +12490,8 @@ _set_config (Camera *camera, const char *confname, CameraWidget *window, GPConte
 					ptp_free_devicepropdesc(&dpd);
 					if (ret != GP_OK) {
 						if (mode == MODE_SET) {
-							/* Clear changed flag so we can try another match */
-							gp_widget_set_changed (widget, FALSE);
+							/* Restore changed flag to continue looking for another match */
+							gp_widget_set_changed (widget, TRUE);
 						}
 						continue; /* see if we have another match */
 					}

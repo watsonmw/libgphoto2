@@ -9995,7 +9995,7 @@ camera_init (Camera *camera, GPContext *context)
 		 * (whether this code is ever called is unclear and simply added as a precaution) */
 
 		/* skip ptp_list_folder calls with storage equal to PTP_HANDLER_SPECIAL for sony cameras -
-		 * this is not supported any sony cameras (mode 3 cameras will return a failure - mode 2 will hang) */
+		 * this is not supported on any sony cameras (mode 3 cameras will return a failure - mode 2 will hang) */
 		if (params->deviceinfo.VendorExtensionID != PTP_VENDOR_SONY)
 			ptp_list_folder(params, PTP_HANDLER_SPECIAL, PTP_HANDLER_SPECIAL, NULL);
 	} else {
